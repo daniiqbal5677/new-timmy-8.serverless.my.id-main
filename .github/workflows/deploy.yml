@@ -52,7 +52,7 @@ jobs:
         run: |
           RECORD_EXISTS=$(aws route53 list-resource-record-sets --hosted-zone-id Z03102443KHY48QVUVSK9 --query "ResourceRecordSets[?Name=='new-timmy-8.serverless.my.id.'][Type]" --output text)
           if [ -n "$RECORD_EXISTS" ]; then
-            terraform import aws_route53_record.subdomain Z03102443KHY48QVUVSK9_new-timmy-11.serverless.my.id_A || echo "Failed to import existing Route 53 record."
+            terraform import aws_route53_record.subdomain Z03102443KHY48QVUVSK9_new-timmy-8.serverless.my.id_A || echo "Failed to import existing Route 53 record."
           fi
         continue-on-error: true
 
